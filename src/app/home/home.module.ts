@@ -14,7 +14,9 @@ import { HomePage } from './home.page';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: HomePage, children: [
+          {path: 'peliculas', loadChildren:() => import ('../tabs/peliculas/peliculas.module').then(m=>m.PeliculasPageModule)}
+        ]
       }
     ])
   ],
